@@ -2,23 +2,27 @@ import java.io.FileNotFoundException;
 
 /**
  * The Game class represents the Battleship game.
- * It manages the game boards for the player and computer, and handles moves and game status.
+ * It manages the game boards for the player and computer, and handles moves and
+ * game status.
  */
 public class Game {
 
     /** The computer's game board. */
     private ComputerBoard computer;
-    
+
     /** The player's game board. */
     private UserBoard player;
 
     /**
      * Constructs a Game object by initializing the player and computer boards.
      *
-     * @throws FileNotFoundException If the file containing ship placements is not found.
+     * @throws FileNotFoundException If the file containing ship placements is not
+     *                               found.
      */
     public Game() throws FileNotFoundException {
+        System.out.println("Computer board");
         computer = new ComputerBoard("compfleet.txt");
+        System.out.println("User board");
         player = new UserBoard("userFleet.txt");
     }
 

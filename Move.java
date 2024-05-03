@@ -59,6 +59,6 @@ public class Move {
      */
     @Override
     public String toString() {
-        return String.format("%c%d", alphabet.charAt(row), col + 1);
+        return String.format("%c%d", alphabet.charAt(row), col);
     }
 }

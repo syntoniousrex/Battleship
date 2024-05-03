@@ -4,7 +4,8 @@ import java.util.Random;
 
 /**
  * The UserBoard class represents the user's game board.
- * It extends the Board class and implements methods specific to the user's moves.
+ * It extends the Board class and implements methods specific to the user's
+ * moves.
  */
 public class UserBoard extends Board {
 
@@ -43,8 +44,9 @@ public class UserBoard extends Board {
         String[] result = new String[2];
         result[0] = move.toString();
         if (status != CellStatus.NOTHING && status != CellStatus.NOTHING_HIT) {
-            if (status.toString().contains("SUNK")) {
-                result[1] = String.format("You sank my %s!", status.toString().substring(0, status.toString().indexOf("_")));
+            if (status.name().contains("SUNK")) {
+                result[1] = String.format("You sank my %s!",
+                        status.name().substring(0, status.name().indexOf("_")));
             }
         }
         return result;
