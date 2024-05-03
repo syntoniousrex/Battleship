@@ -7,7 +7,7 @@ import java.util.Scanner;
  * The BattleShipDriver class is responsible for running the Battleship game.
  */
 public class BattleShipDriver {
-    
+
     /** The Game instance. */
     private static Game game;
 
@@ -24,7 +24,8 @@ public class BattleShipDriver {
      * The main method, responsible for running the Battleship game.
      *
      * @param args Command line arguments (not used).
-     * @throws FileNotFoundException If the file containing ship placements is not found.
+     * @throws FileNotFoundException If the file containing ship placements is not
+     *                               found.
      */
     public static void main(String[] args) throws FileNotFoundException {
         game = new Game();

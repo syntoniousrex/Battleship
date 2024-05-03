@@ -76,18 +76,13 @@ public abstract class Board {
                 default:
                     throw new IllegalArgumentException("Invalid ship type: " + shipType);
             }
-            if (startColumn == endColumn)
-            {
-                for (int i = startRow; i < endRow; i++)
-                {
+            if (startColumn == endColumn) {
+                for (int i = startRow; i <= endRow; i++) {
                     layout.get(i).set(startColumn, cellStatus);
                     System.out.println("Should contain a ship" + layout.get(i));
                 }
-            }
-            else
-            {
-                for (int i = startColumn; i < endColumn; i++)
-                {
+            } else {
+                for (int i = startColumn; i <= endColumn; i++) {
                     layout.get(startRow).set(i, cellStatus);
                     System.out.println("Should contain a ship" + layout.get(startRow));
                 }
@@ -121,9 +116,7 @@ public abstract class Board {
             if (fleet.updateFleet(ShipType.valueOf("ST_" + status.name()))) {
                 layout.get(row).set(column, CellStatus.valueOf(status.name().replace("_HIT", "_SUNK")));
                 return status;
-            }
-            else
-            {
+            } else {
                 layout.get(row).set(column, CellStatus.valueOf(status.name().replace("_HIT", "_HIT")));
             }
         }
@@ -141,8 +134,7 @@ public abstract class Board {
         int column = move.col();
         CellStatus status = layout.get(row).get(column);
 
-        if (status.toString().contains("HIT") || status.toString().contains("SUNK"))
-        {
+        if (status.toString().contains("HIT") || status.toString().contains("SUNK")) {
             return false;
         }
         return true;
